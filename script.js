@@ -1,3 +1,20 @@
+window.onload = function() {
+  // Oculta el menú de carga
+  document.getElementById("loader").style.display = "none";
+  
+  // Muestra el contenido principal
+  document.getElementById("content").style.display = "block";
+};
+
+
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('.imagen');
+  const scrollPosition = window.scrollY;
+
+  // Ajusta la opacidad del encabezado a medida que te desplazas hacia abajo
+  header.style.opacity = 1 - (scrollPosition / 400); // Cambia 400 según tu preferencia
+});
+
 function showContent(id) {
   // Ocultar todos los contenidos
   const contents = document.querySelectorAll('.content');
@@ -30,6 +47,7 @@ const parrafo = document.getElementById('informacion');
 const displayedImage = document.getElementById("displayedImage");
 const displayedImageDanza = document.getElementById("displayedImageDanza");
 const displayedImageCaltura = document.getElementById("displayedImageCultura");
+let info_provincia= "";
 
 imageElements.forEach((imageElement) => {
   imageElement.addEventListener('click', () => {
@@ -49,6 +67,7 @@ imageElements.forEach((imageElement) => {
     displayedImage.src = foto;
     displayedImageDanza.src = fotodanza;
     displayedImageCultura.src = fototradicion;
+    info_provincia=imageElement.getAttribute('id');
   });
 });
 
@@ -58,7 +77,6 @@ imageElements.forEach((imageElement) => {
 function mostrarContenido(idContenido) {
   // Ocultar el div de navegacion_inicio
   const navegacionInicio = document.querySelector('.navegacion_inicio');
-  const navTexto = document.getElementById('titulo_principal');
 
   navegacionInicio.style.display = 'none';
   // Ocultar todos los divs de contenido
@@ -67,19 +85,68 @@ function mostrarContenido(idContenido) {
       div.style.display = 'none';
   });
 
-  
-
   // Mostrar solo el contenido de la categoría seleccionada
   const contenido = document.getElementById(idContenido);
   contenido.style.display = 'block';
 }
 
-$(document).ready(function() {
-  $(".provincia").hover(function() {
-    // Al hacer hover, quita la clase 'provincia-zoom' de todas las provincias
-    $(".provincia").removeClass("provincia-zoom");
-    // Agrega la clase 'provincia-zoom' solo a la provincia que se está haciendo zoom
-    $(this).addClass("provincia-zoom");
+//ocultar informacion de cada provincia
+function mostrarContenidoProvincia() {
+  
+  const contMapa = document.querySelector('.imagenes_provincia');
+  contMapa.style.display ='none';
+  const divsContenido =  document.querySelectorAll('.informacion_provincia');
+  divsContenido.forEach((div)=>{
+    div.style.display ='none';
+  })
+
+  const contenido = document.getElementById(info_provincia+"_info");
+  contenido.style.display = 'block';  
+  alert(contenido);
+}
+
+/*carrusel*/ 
+const buttons = document.querySelectorAll("[data-carousel-button]")
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    const offset = button.dataset.carouselButton === "next" ? 1 : -1
+    const slides = button
+      .closest("[data-carousel]")
+      .querySelector("[data-slides]")
+
+    const activeSlide = slides.querySelector("[data-active]")
+    let newIndex = [...slides.children].indexOf(activeSlide) + offset
+    if (newIndex < 0) newIndex = slides.children.length - 1
+    if (newIndex >= slides.children.length) newIndex = 0
+
+    slides.children[newIndex].dataset.active = true
+    delete activeSlide.dataset.active
+  })
+})
+
+//scroll suave
+document.addEventListener('DOMContentLoaded', function () {
+  const sections = document.querySelectorAll('.section');
+  let currentSectionIndex = 0;
+
+  function scrollToSection(index) {
+      sections[index].scrollIntoView({ behavior: 'smooth' });
+  }
+
+  window.addEventListener('wheel', function (event) {
+      if (event.deltaY > 0) {
+          currentSectionIndex++;
+      } else {
+          currentSectionIndex--;
+      }
+
+      if (currentSectionIndex < 0) {
+          currentSectionIndex = 0;
+      } else if (currentSectionIndex >= sections.length) {
+          currentSectionIndex = sections.length - 1;
+      }
+
+      scrollToSection(currentSectionIndex);
   });
 });
-

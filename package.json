@@ -3,7 +3,10 @@
     "@fullcalendar/core": "^6.1.9",
     "@fullcalendar/interaction": "^6.1.9",
     "@fullcalendar/timegrid": "^6.1.9",
+    "@types/jquery": "^3.5.22",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-responsive-carousel": "^3.2.23",
+    "slick-carousel": "^1.8.1"
   }
 }

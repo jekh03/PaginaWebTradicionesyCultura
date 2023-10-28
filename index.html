@@ -10,99 +10,145 @@
 </head>
 
 <body>
-  <header class="background">
-    <nav class="title_nav">
-      <p id="titulo_principal">TRADICIONES Y CULTURAS</p>  
-    </nav>
-
-    <nav class="main_nav">
-        <ul>
-          <li><a href="#" onclick="mostrarContenido('inicio')" class="categoria">Inicio</a></li>
-          <li><a href="#" onclick="mostrarContenido('contenido_Visitar')" class="categoria">Visitar</a></li>
-          <li><a href="#" onclick="mostrarContenido('contenido_Calendario')" class="categoria">Calendario</a></li>
-        </ul>
-    </nav>
-
-    <nav class="Info_nav">
-        <ul>
-            <li><a href="#" onclick="mostrarContenido('contenido_Comentarios')">Comentarios</a></li>
-        </ul>
-    </nav>
-  </header>
-  <div class="navegacion_inicio" id="inicio">
-    <div class="imagen">
-      <img src="zorro_gris.png" alt="Imagen 1" class="base-image imagen_zorro">
-      <img src="zorro_azul.png" alt="Imagen 2" class="overlay-image imagen_zorro">
-    </div>
-    
-    <div class="triangle-container">
-      <div class="ball top-center">
-        <div class="inner-content">
-          Info
-        </div>
-      </div>
-      <div class="ball left-center">
-        <div class="inner-content">
-          Viaje
-        </div>
-      </div>
-      <div class="ball right-center">
-        <div class="inner-content">
-          Juego
-        </div>
-      </div>
-    </div>
+  <div id="loader">
+    <div class="loader-inner"></div>
   </div>
-  <div class="contenido contenido_mapa" id="contenido_Visitar">
-    <div class="imagenes_provincia">
-      <img src="MapaCusco/mapacusco.png" alt="MapaCusco" class="imagen_base">
-      <img src="MapaCusco/acomayo.png" alt="acomayo" class="provincia" id="acomayo" data-provincia="Acomayo" data-altitud="3 207 msnm" data-capital="Acomayo" data-distritos="7" data-foto="Imagenes/waqrapukara_acomayo.jpg" data-danza="Imagenes/danza_acomayo.jpg" data-tradicion="Imagenes/tradicion_acomayo.jpg">
-      <img src="MapaCusco/anta.png" alt="anta" class="provincia" id="anta" data-provincia="Anta" data-altitud="3 337 msnm" data-capital="Anta" data-distritos="9" data-foto="Imagenes/laguna_humantay_anta.jpg" data-danza="Imagenes/danza_anta.jpg" data-tradicion="Imagenes/tradicion_anta.jpg">
-      <img src="MapaCusco/calca.png" alt="calca" class="provincia" id="calca" data-provincia="Calca" data-altitud="2 926 msnm" data-capital="Calca" data-distritos="8" data-foto="Imagenes/Inkariy.jpg" data-danza="Imagenes/danza_calca.png" data-tradicion="Imagenes/tradicion_calca.jpg">
-      <img src="MapaCusco/canas.png" alt="canas" class="provincia" id="canas" data-provincia="Canas" data-altitud="3 850 msnm" data-capital="Canas" data-distritos="8" data-foto="Imagenes/puente_canas.jpg" data-danza="Imagenes/danza_canas.jpg" data-tradicion="Imagenes/tradicion_canas.jpg">
-      <img src="MapaCusco/canchis.png" alt="canchis" class="provincia" id="canchis" data-provincia="Canchis" data-altitud="3 548 msnm" data-capital="Sicuani" data-distritos="8" data-foto="Imagenes/volcan_canchis.jpg" data-danza="Imagenes/danza_canchis.png" data-tradicion="Imagenes/tradicion_canchis.jpg">
-      <img src="MapaCusco/chumbivilcas.png" alt="chumbivilcas" class="provincia" id="chumbivilcas" data-provincia="Chumbivilcas" data-altitud="2 550 msnm" data-capital="Santo Tomás" data-distritos="8" data-foto="Imagenes/turismo_chumbivilcas.jpg" data-danza="Imagenes/danza_chumbivilcas.jpg" data-tradicion="Imagenes/tradicion_chumbivilcas.jpg">
-      <img src="MapaCusco/cusco.png" alt="cusco" class="provincia" id="cusco" data-provincia="cusco" data-altitud="3 399 msnm" data-capital="Cusco" data-distritos="8" data-foto="Imagenes/plaza-de-armas-cusco.png" data-danza="Imagenes/danzaCusco.png" data-tradicion="Imagenes/tradicion_cusco.jpg">
-      <img src="MapaCusco/espinar.png" alt="espinar" class="provincia" id="espinar" data-provincia="Espinar" data-altitud="3 929 msnm" data-capital="Yauri" data-distritos="8" data-foto="Imagenes/turismo_espinar.jpg" data-danza="Imagenes/danza_espinar.jpg" data-tradicion="Imagenes/tradicion_espinar.jpg">
-      <img src="MapaCusco/paruro.png" alt="paruro" class="provincia" id="paruro" data-provincia="Paruro" data-altitud="3 100 msnm" data-capital="Paruro" data-distritos="9" data-foto="Imagenes/turismo_paruro.jpg" data-danza="Imagenes/danza_paruro.jpg" data-tradicion="Imagenes/tradicion_paruro.jpg">
-      <img src="MapaCusco/paucartambo.png" alt="paucartambo" class="provincia" id="paucartambo" data-provincia="Paucartambo" data-altitud="2 600 msnm" data-capital="Paucartambo" data-distritos="6" data-foto="Imagenes/turismo_paucartambo.jpg" data-danza="Imagenes/danza_paucartambo.jpg" data-tradicion="Imagenes/tradicion_paucartambo.jpg">
-      <img src="MapaCusco/quispicanchi.png" alt="quispicanchi" class="provincia" id="quispicanchi" data-provincia="Quispicanchis" data-altitud="3 200 msnm" data-capital="Urcos" data-distritos="12" data-foto="Imagenes/turismo_quispicanchi.jpg" data-danza="Imagenes/danza_quispicanchi.jpg" data-tradicion="Imagenes/tradicion_quispicanchi.jpg">
-      <img src="MapaCusco/urubamba.png" alt="urubamba" class="provincia" id="urubamba" data-provincia="Urubamba" data-altitud="2 800 msnm" data-capital="Urubamba" data-distritos="7" data-foto="Imagenes/turismo_urubamba.jpg" data-danza="Imagenes/danza_urubamba.jpg" data-tradicion="Imagenes/tradicion_urubamba.jpg">
-      <img src="MapaCusco/la_convencion.png" alt="la_convencion" class="provincia" id="la_convencion" data-provincia="La Convencion" data-altitud="1 800 msnm" data-capital="Quillabamba" data-distritos="14" data-foto="Imagenes/choquequirao.jpg" data-danza="Imagenes/danza_LC.jpg" data-tradicion="Imagenes/cultura_LC.png">
+  <div id="content" style="display: none;">
+    <header class="background">
+      <nav class="title_nav">
+        <p id="titulo_principal">TRADICIONES Y CULTURAS</p>  
+      </nav>
+
+      <nav class="main_nav">
+          <ul>
+            <li><a href="#" onclick="mostrarContenido('inicio')" class="categoria">Inicio</a></li>
+            <li><a href="#" onclick="mostrarContenido('contenido_Visitar')" class="categoria">Visitar</a></li>
+            <li><a href="#" onclick="mostrarContenido('contenido_Musica')" class="categoria">Musica</a></li>
+          </ul>
+      </nav>
+
+      <nav class="Info_nav">
+          <ul>
+              <li><a href="#" onclick="mostrarContenido('contenido_Comentarios')">Comentarios</a></li>
+          </ul>
+      </nav>
+    </header>
+    <div class="navegacion_inicio" id="inicio">
+      <div class="imagen section">
+        <section>
+          <h1 id="titulo_menu">TRADICIONES Y CULTURAS</h1>
+          <img src="zorro_gris.png" alt="Imagen 1" class="base-image imagen_zorro">
+          <img src="zorro_azul.png" alt="Imagen 2" class="overlay-image imagen_zorro">
+        </section>
+
+      </div>
+      
+      <div class="section" id="section_one">
+        <h2 id="titulo_cusco">¡BIENVENIDOS A LA ESENCIA DEL CUSCO!</h2>
+        <div class="informacion_one">
+          <p>Descubre las maravillas de una tierra llena de historia, cultura y tradiciones únicas. Entra en un viaje virtual por las festividades, los tesoros arqueológicos, las danzas que cuentan historias ancestrales y mucho más. Únete a nosotros y déjate envolver por la magia del Cusco. ¡Bienvenidos a un mundo de maravillas!</p>
+        </div>      
+      </div>
+      
+      <div class="section">Sección 3</div>
+      
     </div>
-    <div class="informacion_provincias">
-      <div class="info_provincia">
-        <h1 class="titulo" id="titulo">provincia</h1>
-        <p class="parrafo" id="informacion">Altitud<br>Capital<br>Distritos</p>
-      </div>
-
-      <div class="cultura">
-        <h1 class="titulo">Cultura</h1>
-        <img src="" alt="" id="displayedImageCultura">
-      </div>
-
-      <div class="danza">
-        <h1 class="titulo">Danzas</h1>
-        <img src="" alt="" id="displayedImageDanza">
-      </div>
-
-      <div class="zona_turistica">
-        <h1 class="titulo">zona Turistica</h1>
-        <img src="" alt="" id="displayedImage">
-      </div>
-
-    </div>
-  </div>
+    <div class="contenido contenido_mapa" id="contenido_Visitar">
+      <div class="imagenes_provincia">
+        <img src="MapaCusco/mapacusco.png" alt="MapaCusco" class="imagen_base">
+        <img src="MapaCusco/acomayo.png" alt="acomayo" class="provincia" id="acomayo" data-provincia="Acomayo" data-altitud="3 207 msnm" data-capital="Acomayo" data-distritos="7" data-foto="Imagenes/waqrapukara_acomayo.jpg" data-danza="Imagenes/danza_acomayo.jpg" data-tradicion="Imagenes/tradicion_acomayo.jpg">
+        <img src="MapaCusco/anta.png" alt="anta" class="provincia" id="anta" data-provincia="Anta" data-altitud="3 337 msnm" data-capital="Anta" data-distritos="9" data-foto="Imagenes/laguna_humantay_anta.jpg" data-danza="Imagenes/danza_anta.jpg" data-tradicion="Imagenes/tradicion_anta.jpg">
+        <img src="MapaCusco/calca.png" alt="calca" class="provincia" id="calca" data-provincia="Calca" data-altitud="2 926 msnm" data-capital="Calca" data-distritos="8" data-foto="Imagenes/Inkariy.jpg" data-danza="Imagenes/danza_calca.png" data-tradicion="Imagenes/tradicion_calca.jpg">
+        <img src="MapaCusco/canas.png" alt="canas" class="provincia" id="canas" data-provincia="Canas" data-altitud="3 850 msnm" data-capital="Canas" data-distritos="8" data-foto="Imagenes/puente_canas.jpg" data-danza="Imagenes/danza_canas.jpg" data-tradicion="Imagenes/tradicion_canas.jpg">
+        <img src="MapaCusco/canchis.png" alt="canchis" class="provincia" id="canchis" data-provincia="Canchis" data-altitud="3 548 msnm" data-capital="Sicuani" data-distritos="8" data-foto="Imagenes/volcan_canchis.jpg" data-danza="Imagenes/danza_canchis.png" data-tradicion="Imagenes/tradicion_canchis.jpg">
+        <img src="MapaCusco/chumbivilcas.png" alt="chumbivilcas" class="provincia" id="chumbivilcas" data-provincia="Chumbivilcas" data-altitud="2 550 msnm" data-capital="Santo Tomás" data-distritos="8" data-foto="Imagenes/turismo_chumbivilcas.jpg" data-danza="Imagenes/danza_chumbivilcas.jpg" data-tradicion="Imagenes/tradicion_chumbivilcas.jpg">
+        <img src="MapaCusco/cusco.png" alt="cusco" class="provincia" id="cusco" data-provincia="cusco" data-altitud="3 399 msnm" data-capital="Cusco" data-distritos="8" data-foto="Imagenes/plaza-de-armas-cusco.png" data-danza="Imagenes/danzaCusco.png" data-tradicion="Imagenes/tradicion_cusco.jpg">
+        <img src="MapaCusco/espinar.png" alt="espinar" class="provincia" id="espinar" data-provincia="Espinar" data-altitud="3 929 msnm" data-capital="Yauri" data-distritos="8" data-foto="Imagenes/turismo_espinar.jpg" data-danza="Imagenes/danza_espinar.jpg" data-tradicion="Imagenes/tradicion_espinar.jpg">
+        <img src="MapaCusco/paruro.png" alt="paruro" class="provincia" id="paruro" data-provincia="Paruro" data-altitud="3 100 msnm" data-capital="Paruro" data-distritos="9" data-foto="Imagenes/turismo_paruro.jpg" data-danza="Imagenes/danza_paruro.jpg" data-tradicion="Imagenes/tradicion_paruro.jpg">
+        <img src="MapaCusco/paucartambo.png" alt="paucartambo" class="provincia" id="paucartambo" data-provincia="Paucartambo" data-altitud="2 600 msnm" data-capital="Paucartambo" data-distritos="6" data-foto="Imagenes/turismo_paucartambo.jpg" data-danza="Imagenes/danza_paucartambo.jpg" data-tradicion="Imagenes/tradicion_paucartambo.jpg">
+        <img src="MapaCusco/quispicanchi.png" alt="quispicanchi" class="provincia" id="quispicanchi" data-provincia="Quispicanchis" data-altitud="3 200 msnm" data-capital="Urcos" data-distritos="12" data-foto="Imagenes/turismo_quispicanchi.jpg" data-danza="Imagenes/danza_quispicanchi.jpg" data-tradicion="Imagenes/tradicion_quispicanchi.jpg">
+        <img src="MapaCusco/urubamba.png" alt="urubamba" class="provincia" id="urubamba" data-provincia="Urubamba" data-altitud="2 800 msnm" data-capital="Urubamba" data-distritos="7" data-foto="Imagenes/turismo_urubamba.jpg" data-danza="Imagenes/danza_urubamba.jpg" data-tradicion="Imagenes/tradicion_urubamba.jpg">
+        <img src="MapaCusco/la_convencion.png" alt="la_convencion" class="provincia" id="la_convencion" data-provincia="La Convencion" data-altitud="1 800 msnm" data-capital="Quillabamba" data-distritos="14" data-foto="Imagenes/choquequirao.jpg" data-danza="Imagenes/danza_LC.jpg" data-tradicion="Imagenes/cultura_LC.png">
+      
+        <div class="informacion_provincias">
+          <div class="info_provincia">
+            <h1 class="titulo" id="titulo">provincia</h1>
+            <p class="parrafo" id="informacion">Altitud<br>Capital<br>Distritos</p>
+          </div>
   
-  <div class="contenido contenido_Calendario" id="contenido_Calendario">
+          <div class="cultura">
+            <h1 class="titulo">Cultura</h1>
+            <img src="" alt="" id="displayedImageCultura">
+          </div>
+  
+          <div class="danza" onclick="mostrarContenidoProvincia(info_provincia)">
+            <h1 class="titulo">Danzas</h1>
+            <img src="" alt="" id="displayedImageDanza">
+          </div>
+  
+          <div class="zona_turistica">
+            <h1 class="titulo">zona Turistica</h1>
+            <img src="Imagenes/choquequirao.jpg" alt="" id="displayedImage">
+          </div>
+      </div>
+      
+      </div>
+      <div class="informacion_provincia" id="calca_info">Comentarios 1</div>
+      <div class="informacion_provincia" id="urubamba_info">Comentarios 2</div>
+      <div class="informacion_provincias" id="canas_info">Comentarios 3</div>
+      <div class="informacion_provincia" id="la_convencion_info">
+        <div id="danza_la_convencion">danzas</div>
+        <div id="tradicion">tradicion</div>
+        <div id="cultura">cultura</div>
+      </div>
+      <div class="informacion_provincia" id="canchis_info">Comentarios 5</div>
+      <div class="informacion_provincia" id="espinar_info">Comentarios 6</div>
+      <div class="informacion_provincia" id="cusco_info">Comentarios 7</div>
+      <div class="informacion_provincia" id="quispicanchis_info">Comentarios 8</div>
+      <div class="informacion_provincia" id="anta_info">Comentarios 10</div>
+      <div class="informacion_provincia" id="paucartambo_info">Comentarios 11</div>
+      <div class="informacion_provincia" id="paruro_info">Comentarios 12</div>
+      <div class="informacion_provincia" id="acomayo_info">Comentarios 9</div>
+      <div class="informacion_provincia" id="chumbivilcas_info">Comentarios 13</div>
+    </div>
+    
+    <div class="contenido contenido_Musica" id="contenido_Musica">
+      <section aria-label="Newest Photos">
+        <div class="carousel" data-carousel>
+          <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
+          <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+          <ul data-slides>
+            <li class="slide" data-active>
+              <img src="https://source.unsplash.com/78A265wPiO4" alt="Nature Image #1">
+            </li>
+            <li class="slide">
+              <img src="https://source.unsplash.com/eOpewngf68w" alt="Nature Image #2">
+            </li>
+            <li class="slide">
+              <img src="https://source.unsplash.com/ndN00KmbJ1c" alt="Nature Image #3">
+            </li>
+            <li class="slide">
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/nuZgS4W3meU?si=p0SfjljeeTP4TrxI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="videos-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/nuZgS4W3meU?si=p0SfjljeeTP4TrxI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/R_wTbl0FX7A?si=8tFdCnnlmRQ3238q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1ZDmvAy9JEs?si=HQdWp5zZl6z7u_e9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/2Mh38LcYnd4?si=GP6R1r9HKq9tbJce" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/npSYc6XEovA?si=BIlnog-qI0sNwo-q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/58NMMld4gsk?si=VBFwkT8J4I0TI_Dv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ziLjYCCo4WM?si=BtcLAsu7kKgydjMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/oJG6IYDBxOU?si=NuNQjUTKNMxwOGtE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/HZCHzUUMXHI?si=wjeUMQKSgUywT-hm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
     
   </div>
-  <div class="contenido" id="contenido_Comentarios">Comentarios de la comunidad</div>
-  <!-- jquery cdn link-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 
-  <!-- magnific popup js cdn link -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
   <script src="script.js"></script>
 </body>
 
