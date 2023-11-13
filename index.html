@@ -10,9 +10,14 @@
 </head>
 
 <body>
-  <div id="loader">
-    <div class="loader-inner"></div>
+  
+  <div id="loader" onload="reproducirMusica()">
+    <img class="fotoCarga" src="Portadas/cabeza.png" alt="cabeza">
+    <div class="loader-inner">
+      
+    </div>
   </div>
+
   <div id="content" style="display: none;">
     <header class="background">
       <nav class="title_nav">
@@ -20,21 +25,32 @@
       </nav>
 
       <nav class="main_nav">
-          <ul>
-            <li><a href="#" onclick="mostrarContenido('inicio')" class="categoria">Inicio</a></li>
-            <li><a href="#" onclick="mostrarContenido('contenido_Visitar')" class="categoria">Visitar</a></li>
-            <li><a href="#" onclick="mostrarContenido('contenido_Musica')" class="categoria">Musica</a></li>
-          </ul>
+        <input type="checkbox" id="nav-check" class="nav-checkbox">
+        <label for="nav-check" class="nav-btn">
+          <img src="iconos/FluentMdl2BulletedListText.svg" alt="Imagen menu" class="icono">
+        </label>
+
+        <ul class="nav-links">
+          <li><a href="#" onclick="mostrarContenido('inicio')" class="categoria">Inicio</a>
+            <img src="iconos/FluentHome20Regular.svg" alt="Imagen Inicio" onclick="mostrarContenido('inicio')" class="icono">
+          </li>
+          <li><a href="#" onclick="mostrarContenido('contenido_Visitar')" class="categoria">Visitar</a>
+            <img src="iconos/PhSuitcaseRolling.svg" alt="Imagen Visitar" onclick="mostrarContenido('contenido_Visitar')" class="icono">
+          </li>
+          <li><a href="#" onclick="mostrarContenido('contenido_Musica')" class="categoria">Musica</a>
+            <img src="iconos/PhMusicNoteSimpleThin.svg" alt="Imagen Musica" onclick="mostrarContenido('contenido_Musica')" class="icono">
+          </li>
+        </ul>
       </nav>
 
       <nav class="Info_nav">
-          <ul>
-              <li><a href="#" onclick="mostrarContenido('contenido_Comentarios')">Comentarios</a></li>
-          </ul>
+        <ul>
+          <li><a href="#" onclick="mostrarContenido('contenido_Comentarios')">Comentarios</a></li>
+        </ul>
       </nav>
     </header>
     <div class="navegacion_inicio" id="inicio">
-      <div class="imagen section">
+      <div class="imagen">
         <section>
           <h1 id="titulo_menu">TRADICIONES Y CULTURAS</h1>
           <img src="zorro_gris.png" alt="Imagen 1" class="base-image imagen_zorro">
@@ -55,6 +71,7 @@
     </div>
     <div class="contenido contenido_mapa" id="contenido_Visitar">
       <div class="imagenes_provincia">
+        <!--cambiar la foto de la danza de cusco y paucartambo-->
         <img src="MapaCusco/mapacusco.png" alt="MapaCusco" class="imagen_base">
         <img src="MapaCusco/acomayo.png" alt="acomayo" class="provincia" id="acomayo" data-provincia="Acomayo" data-altitud="3 207 msnm" data-capital="Acomayo" data-distritos="7" data-foto="Imagenes/waqrapukara_acomayo.jpg" data-danza="Imagenes/danza_acomayo.jpg" data-tradicion="Imagenes/tradicion_acomayo.jpg">
         <img src="MapaCusco/anta.png" alt="anta" class="provincia" id="anta" data-provincia="Anta" data-altitud="3 337 msnm" data-capital="Anta" data-distritos="9" data-foto="Imagenes/laguna_humantay_anta.jpg" data-danza="Imagenes/danza_anta.jpg" data-tradicion="Imagenes/tradicion_anta.jpg">
@@ -69,47 +86,192 @@
         <img src="MapaCusco/quispicanchi.png" alt="quispicanchi" class="provincia" id="quispicanchi" data-provincia="Quispicanchis" data-altitud="3 200 msnm" data-capital="Urcos" data-distritos="12" data-foto="Imagenes/turismo_quispicanchi.jpg" data-danza="Imagenes/danza_quispicanchi.jpg" data-tradicion="Imagenes/tradicion_quispicanchi.jpg">
         <img src="MapaCusco/urubamba.png" alt="urubamba" class="provincia" id="urubamba" data-provincia="Urubamba" data-altitud="2 800 msnm" data-capital="Urubamba" data-distritos="7" data-foto="Imagenes/turismo_urubamba.jpg" data-danza="Imagenes/danza_urubamba.jpg" data-tradicion="Imagenes/tradicion_urubamba.jpg">
         <img src="MapaCusco/la_convencion.png" alt="la_convencion" class="provincia" id="la_convencion" data-provincia="La Convencion" data-altitud="1 800 msnm" data-capital="Quillabamba" data-distritos="14" data-foto="Imagenes/choquequirao.jpg" data-danza="Imagenes/danza_LC.jpg" data-tradicion="Imagenes/cultura_LC.png">
-      
-        <div class="informacion_provincias">
-          <div class="info_provincia">
-            <h1 class="titulo" id="titulo">provincia</h1>
-            <p class="parrafo" id="informacion">Altitud<br>Capital<br>Distritos</p>
-          </div>
-  
-          <div class="cultura">
-            <h1 class="titulo">Cultura</h1>
-            <img src="" alt="" id="displayedImageCultura">
-          </div>
-  
-          <div class="danza" onclick="mostrarContenidoProvincia(info_provincia)">
-            <h1 class="titulo">Danzas</h1>
-            <img src="" alt="" id="displayedImageDanza">
-          </div>
-  
-          <div class="zona_turistica">
-            <h1 class="titulo">zona Turistica</h1>
-            <img src="Imagenes/choquequirao.jpg" alt="" id="displayedImage">
-          </div>
       </div>
-      
+
+      <div class="informacion_provincias">
+        <div class="info_provincia">
+          <h1 class="titulo" id="titulo">provincia</h1>
+          <p class="parrafo" id="informacion">Altitud<br>Capital<br>Distritos</p>
+        </div>
+
+        <div class="cultura">
+          <h1 class="titulo">Cultura</h1>
+          <img src="Portadas/SimpleLineIconsCup.svg" alt="" id="displayedImageCultura">
+        </div>
+
+        <div class="danza" id="nombre" >
+          <h1 class="titulo">Danzas</h1>
+          <img src="Portadas/VaadinMovie.svg" alt="" id="displayedImageDanza">
+        </div>
+
+        <div class="zona_turistica">
+          <h1 class="titulo">zona Turistica</h1>
+          <img src="Portadas/EtBike.svg" alt="" id="displayedImage">
+        </div>
       </div>
-      <div class="informacion_provincia" id="calca_info">Comentarios 1</div>
-      <div class="informacion_provincia" id="urubamba_info">Comentarios 2</div>
-      <div class="informacion_provincias" id="canas_info">Comentarios 3</div>
-      <div class="informacion_provincia" id="la_convencion_info">
-        <div id="danza_la_convencion">danzas</div>
-        <div id="tradicion">tradicion</div>
-        <div id="cultura">cultura</div>
-      </div>
-      <div class="informacion_provincia" id="canchis_info">Comentarios 5</div>
-      <div class="informacion_provincia" id="espinar_info">Comentarios 6</div>
-      <div class="informacion_provincia" id="cusco_info">Comentarios 7</div>
-      <div class="informacion_provincia" id="quispicanchis_info">Comentarios 8</div>
-      <div class="informacion_provincia" id="anta_info">Comentarios 10</div>
-      <div class="informacion_provincia" id="paucartambo_info">Comentarios 11</div>
-      <div class="informacion_provincia" id="paruro_info">Comentarios 12</div>
-      <div class="informacion_provincia" id="acomayo_info">Comentarios 9</div>
-      <div class="informacion_provincia" id="chumbivilcas_info">Comentarios 13</div>
+
+    </div>
+
+    <div class="turismo_la_convencion divInformacion">
+      paseito
+    </div>
+
+    <div class="danza_la_convencion divInformacion">
+      danza la convencion
+    </div>
+
+    <div class="cultura_la_convencion divInformacion">
+      cultura la convencion
+    </div>
+    <!-- #region urubamba-->
+    <div class="turismo_urubamba divInformacion">
+      urubamba
+    </div>
+
+    <div class="danza_urubamba divInformacion">
+      danza urubamba
+    </div>
+
+    <div class="cultura_urubamba divInformacion">
+      <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FJEKH022021%2Fvideos%2F732546671587553%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="yes" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+    </div>
+    <!-- #endregion urubamba -->
+
+    <!-- #region cusco-->
+    <div class="turismo_cusco divInformacion">
+      cusco
+    </div>
+
+    <div class="danza_cusco divInformacion">
+      danza cusco
+    </div>
+
+    <div class="cultura_cusco divInformacion">
+      cultura cusco
+    </div>
+    <!-- #endregion cusco-->
+
+    <div class="turismo_chumbivilcas divInformacion">
+      chumbivilcas
+    </div>
+
+    <div class="danza_chumbivilcas divInformacion">
+      danza chumbivilcas
+    </div>
+
+    <div class="cultura_chumbivilcas divInformacion">
+      cultura chumbivilcas
+    </div>
+
+    <div class="turismo_canchis divInformacion">
+      canchis
+    </div>
+
+    <div class="danza_canchis divInformacion">
+      danza canchis
+    </div>
+
+    <div class="cultura_canchis divInformacion">
+      cultura canchis
+    </div>
+
+    <div class="turismo_paruro divInformacion">
+      paruro
+    </div>
+
+    <div class="danza_paruro divInformacion">
+      danza paruro
+    </div>
+
+    <div class="cultura_paruro divInformacion">
+      cultura paruro
+    </div>
+
+    <div class="turismo_paucartambo divInformacion">
+      paucartambo
+    </div>
+
+    <div class="danza_paucartambo divInformacion">
+      <article>
+        <title>Carnaval de sayllapata</title>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dA3nuQMPTPA?si=LE45C-GkrsXTH9Pk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </article>
+    </div>
+
+    <div class="cultura_paucartambo divInformacion">
+      cultura paucartambo
+    </div>
+
+    <div class="turismo_quispicanchi divInformacion">
+      quispicanchi
+    </div>
+
+    <div class="danza_quispicanchi divInformacion">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/aN1gUrbttyM?si=_ClXblvYBOMe3h1i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>Saras pillu</iframe>
+    </div>
+
+    <div class="cultura_quispicanchi divInformacion">
+      cultura quispicanchi
+    </div>
+
+    <div class="turismo_acomayo divInformacion">
+      acomayo
+    </div>
+
+    <div class="danza_acomayo divInformacion">
+      danza acomayo
+    </div>
+
+    <div class="cultura_acomayo divInformacion">
+      cultura acomayo
+    </div>
+
+    <div class="turismo_anta divInformacion">
+      anta
+    </div>
+
+    <div class="danza_anta divInformacion">
+      danza anta
+    </div>
+
+    <div class="cultura_anta divInformacion">
+      cultura anta
+    </div>
+
+    <div class="turismo_calca divInformacion">
+      calca
+    </div>
+
+    <div class="danza_calca divInformacion">
+      danza calca
+    </div>
+
+    <div class="cultura_calca divInformacion">
+      cultura calca
+    </div>
+
+    <div class="turismo_canas divInformacion">
+      canas
+    </div>
+
+    <div class="danza_canas divInformacion">
+      danza canas
+    </div>
+
+    <div class="cultura_canas divInformacion">
+      cultura canas
+    </div>
+
+    <div class="turismo_espinar divInformacion">
+      espinar
+    </div>
+
+    <div class="danza_espinar divInformacion">
+      danza espinar
+    </div>
+
+    <div class="cultura_espinar divInformacion">
+      cultura espinar
     </div>
     
     <div class="contenido contenido_Musica" id="contenido_Musica">
@@ -146,6 +308,8 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/HZCHzUUMXHI?si=wjeUMQKSgUywT-hm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
     </div>
+
+    <div class="contenido contenido_Comentarios" id="contenido_Comentarios">Comentarios</div>
     
   </div>
 

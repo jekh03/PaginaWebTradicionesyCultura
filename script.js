@@ -47,9 +47,9 @@ const parrafo = document.getElementById('informacion');
 const displayedImage = document.getElementById("displayedImage");
 const displayedImageDanza = document.getElementById("displayedImageDanza");
 const displayedImageCaltura = document.getElementById("displayedImageCultura");
-let info_provincia= "";
 
-imageElements.forEach((imageElement) => {
+
+imageElements.forEach((imageElement, index) => {
   imageElement.addEventListener('click', () => {
     imageElements.forEach((element) => {
       element.style.filter = "sepia(1)";
@@ -68,6 +68,7 @@ imageElements.forEach((imageElement) => {
     displayedImageDanza.src = fotodanza;
     displayedImageCultura.src = fototradicion;
     info_provincia=imageElement.getAttribute('id');
+    localStorage.setItem('imagenSeleccionada', index);
   });
 });
 
@@ -90,20 +91,6 @@ function mostrarContenido(idContenido) {
   contenido.style.display = 'block';
 }
 
-//ocultar informacion de cada provincia
-function mostrarContenidoProvincia() {
-  
-  const contMapa = document.querySelector('.imagenes_provincia');
-  contMapa.style.display ='none';
-  const divsContenido =  document.querySelectorAll('.informacion_provincia');
-  divsContenido.forEach((div)=>{
-    div.style.display ='none';
-  })
-
-  const contenido = document.getElementById(info_provincia+"_info");
-  contenido.style.display = 'block';  
-  alert(contenido);
-}
 
 /*carrusel*/ 
 const buttons = document.querySelectorAll("[data-carousel-button]")
@@ -150,3 +137,44 @@ document.addEventListener('DOMContentLoaded', function () {
       scrollToSection(currentSectionIndex);
   });
 });
+
+//Escuhcar los atributos de cada provincia
+const Atributos = document.querySelectorAll('div.cultura, div.danza, div.zona_turistica');
+
+Atributos.forEach((elemento) => {
+  elemento.addEventListener('click', () => {
+    const galeria = document.querySelector('.contenido_mapa');
+    galeria.style.display = 'none';
+
+    const imagenSeleccionada = localStorage.getItem('imagenSeleccionada');
+
+    if (elemento.className === 'zona_turistica') {
+      const divTurismo = document.querySelector(`.turismo_${imageElements[imagenSeleccionada].alt.toLowerCase()}`);
+      // Ocultar todos los divs de turismo antes de mostrar el específico
+      document.querySelectorAll('[class^="turismo_"]').forEach((div) => {
+        div.style.display = 'none';
+      });
+      divTurismo.style.display = 'block';
+    }
+    // Demas casos
+    else if (elemento.className === 'danza'){
+      const divDanza = document.querySelector(`.danza_${imageElements[imagenSeleccionada].alt.toLowerCase()}`);
+    
+      document.querySelectorAll('[class^="danza_"').forEach((div)=>{
+        div.style.display='none';
+      })
+      divDanza.style.display='block';
+    }
+    
+    else if (elemento.className === 'cultura'){
+      const divDanza = document.querySelector(`.cultura_${imageElements[imagenSeleccionada].alt.toLowerCase()}`);
+    
+      document.querySelectorAll('[class^="cultura_"').forEach((div)=>{
+        div.style.display='none';
+      })
+      divDanza.style.display='block';
+    }
+
+  });
+});
+
