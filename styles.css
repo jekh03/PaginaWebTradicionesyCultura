@@ -191,15 +191,25 @@ a.active {
   }
 }
 
+#parrafo1{
+  background-size: 3px;
+  font-size: 78%;
+}
+
 .section{
   height: 100vh;
   position: relative;
-  top: 85%;
+  /* top: 85%; */
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #section_one{
   background-image: url('Portadas/llama1_portada.jpg');
-  background-size: 100%;
+  /*background-size: 100%;*/
   background-position: bottom;
   background-size: cover;
 }
@@ -213,7 +223,7 @@ a.active {
   display: flex;
   transition: opacity 2s;
   background-image: url('Portadas/paisaje.jpg');
-  height: 90vh;
+  height: 91vh;
   justify-content: center;
   align-items: center;
 }
@@ -234,20 +244,20 @@ h1#titulo_menu {
   font-family: 'FuenteTitulo2',sans-serif;
   font-size: 50px;
   color: white;
-  left: 29px;
+  /*left: 29px;*/
   position: relative;
-  top: 30px;
+  /*top: 30px;*/
   filter: drop-shadow(8px 11px 1px black);
 }
 
 .informacion_one {
   position: relative;
-  width: 69vh;
-  left: 37px;
+  width: 70%;
+  /*left: 37px;*/
   font-size: 20px;
   color: rgb(0, 0, 0);
   text-align: left;
-  top: 50px;
+  /*top: 50px;*/
   filter: drop-shadow(2px 4px 3px black);
   font-family: auto;
 }
@@ -501,6 +511,30 @@ img.imagen_c {
   filter: drop-shadow(8px 10px 5px black);
 }
 
+article{
+  display: flex;
+}
+/*informacion de zonas turisticas*/
+.titulo_zona_turistica{
+  transform: rotate(-90deg);
+  left: 1px;
+  white-space: nowrap;
+  position: relative;
+  height: 98px;
+  top: 99px;
+}
+
+.Info{
+  left: -39px;
+  position: relative;
+}
+
+.Imagen_Zona_Turistica{
+  width: 40%;
+  height: 0%;
+  border-radius: 10px;
+}
+
 /*musicas*/
 .videos-container {
   display: flex;
@@ -587,4 +621,51 @@ img.imagen_c {
 
 .divInformacion{
   display: none;
+}
+
+/*carrusel 2 automatico*/
+.carousel-container {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.slide22 {
+  width: 100vw;
+  text-align: center;
+  color: #fff;
+  display: none;
+  transition: opacity 4s ease-in-out;
+  opacity: 0;
+}
+
+.slide22.active {
+  display: block;
+  opacity: 1;
+}
+
+.content {
+  padding: 50px;
+}
+
+#slide1,
+#slide2,
+#slide3 {
+  background-size: cover;
+  background-position: center;
+  display: none;
+}
+
+#slide1.active,
+#slide2.active,
+#slide3.active {
+  display: block; /* Muestra la diapositiva activa */
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .slide22 {
+    background-size: cover;
+    background-position: center;
+  }
 }
