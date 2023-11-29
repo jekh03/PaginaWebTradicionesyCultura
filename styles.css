@@ -97,10 +97,16 @@ a.active {
   display: block;
 }
 
+.tex1{
+  font-size: 100%;
+  color: black;
+}
+
 .icono{
   width: 21px;  
   top: 3px;
   position: relative;
+  filter: drop-shadow(0 0 4px white);
 }
 
 /*Ocultar contenidos de las categorias*/
@@ -191,9 +197,10 @@ a.active {
   }
 }
 
-#parrafo1{
+.parrafo1{
   background-size: 3px;
   font-size: 78%;
+  text-align: center;
 }
 
 .section{
@@ -203,11 +210,11 @@ a.active {
   /* width: 100%; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
-#section_one{
+#section_two{
   background-image: url('Portadas/llama1_portada.jpg');
   /*background-size: 100%;*/
   background-position: bottom;
@@ -219,13 +226,13 @@ a.active {
   width: 100%;
   background-size: cover;
   background-position: center;
-  position: relative;
   display: flex;
   transition: opacity 2s;
   background-image: url('Portadas/paisaje.jpg');
   height: 91vh;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 /*titulo de portada*/
 h1#titulo_menu {
@@ -248,18 +255,20 @@ h1#titulo_menu {
   position: relative;
   /*top: 30px;*/
   filter: drop-shadow(8px 11px 1px black);
+  text-align: center;
 }
 
 .informacion_one {
   position: relative;
   width: 70%;
-  /*left: 37px;*/
   font-size: 20px;
   color: rgb(0, 0, 0);
-  text-align: left;
-  /*top: 50px;*/
   filter: drop-shadow(2px 4px 3px black);
   font-family: auto;
+  backdrop-filter: blur(9px);
+  background-color: #ffffff0d;
+  border-radius: 15px;
+  -webkit-backdrop-filter:blur(9px);
 }
 /*.navegacion_inicio*/
 .navegacion_inicio{
@@ -275,36 +284,18 @@ h1#titulo_menu {
   background: #5f66bb0a;
 }
 /*bueno*/
-
-.imagen_zorro {
-  /*position: relative;
-  top: 185%;
-  left: 30%;
-  width: 44%;
-  z-index: 1; /* Coloca la imagen detrás del contenido SVG */
-  filter: drop-shadow(0px 0px 11px black);
-}
   
-.base-image,
-.overlay-image {
+.base-image {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-.overlay-image {
-  position: absolute;
-  top: 12.5%;
-  opacity: 0;
-  transition: opacity 2.3s ease-in-out;
-  filter: hue-rotate(234deg);
-}
-
-.imagen:hover .overlay-image {
-  opacity: 1;
-}
-
 /*ajustar el tamaño de la imagen de las imagen de la infor. de cada cada provincia*/
+.imagenInformaciones{
+  filter: drop-shadow(0px 0px 2px white);
+}
+
 img#displayedImage {
   width: 50%;
   border-radius: 24px;
@@ -323,6 +314,30 @@ img#displayedImageCultura {
   cursor: pointer;
 }
 /**************************************************/
+
+/*iconos de redes sociales*/
+.contentIcono{
+  display: flex;
+  justify-content: center;
+}
+
+.iconoInicio{
+  margin: 18px;
+  width: 22%;
+  filter: drop-shadow(3px 1px 3px rgb(255, 255, 255));
+}
+
+.iconoInicio:hover{
+  filter: drop-shadow(1px 3px 1px aqua);
+}
+
+.iconoFlecha{
+  width: 4%;
+}
+
+.iconoFlecha:hover{
+  filter: drop-shadow(2px 4px 6px rgb(255, 255, 255));
+}
 
  /*Estilos para el contenido del mapa*/
 .contenido_mapa{
@@ -493,6 +508,7 @@ h1.titulo {
   font-size: 22px;
   text-align: center;
   color: #00f7d7;
+  filter: drop-shadow(0px 0px 12px);
 }
 
 p.parrafo {
@@ -503,6 +519,7 @@ p.parrafo {
 
 .color-destacado {
   color: #63c2d9; 
+  filter: drop-shadow(0px 0px 5px);
 }
 
 img.imagen_c {
@@ -625,12 +642,16 @@ article{
 
 /*carrusel 2 automatico*/
 .carousel-container {
-  width: 100vw;
+  width: 90vw;
   overflow: hidden;
+  backdrop-filter: blur(1px);
+  background-color: #ffffff12;
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 23px;
 }
 
 .slide22 {
-  width: 100vw;
+  width: 90vw;
   text-align: center;
   color: #fff;
   display: none;
@@ -644,20 +665,18 @@ article{
 }
 
 .content {
-  padding: 50px;
+  padding: 8px;
 }
 
 #slide1,
-#slide2,
-#slide3 {
+#slide2 {
   background-size: cover;
   background-position: center;
   display: none;
 }
 
 #slide1.active,
-#slide2.active,
-#slide3.active {
+#slide2.active {
   display: block; /* Muestra la diapositiva activa */
 }
 

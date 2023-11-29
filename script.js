@@ -85,7 +85,7 @@ function mostrarContenido(idContenido) {
   divsContenido.forEach((div) => {
       div.style.display = 'none';
   });
-
+  
   // Mostrar solo el contenido de la categoría seleccionada
   const contenido = document.getElementById(idContenido);
   contenido.style.display = 'block';
@@ -189,3 +189,21 @@ document.addEventListener('DOMContentLoaded', function () {
   }, 5000); // Cambia a la siguiente diapositiva cada 5 segundos (ajusta según sea necesario)
 });
 
+//redireccionar a los enlaces
+document.getElementById("emailIcon").addEventListener("click", function() {
+  window.location.href = "mailto:correo@empresa.com";
+});
+
+document.getElementById("facebookIcon").addEventListener("click", function() {
+  window.location.href = "https://www.facebook.com/TradicionCultura22";
+});
+
+//Scrooll automatico 
+function scrollToDiv(divId) {
+  const targetDiv = document.getElementById(divId);
+  targetDiv.scrollIntoView({ behavior: 'smooth' });
+
+  // Cambiar la dirección del ícono
+  const icono = document.querySelector(`#${divId} .iconoFlecha`);
+  icono.src = (divId === 'section_two') ? 'iconos/MdiChevronUp.svg' : 'iconos/MdiChevronDown.svg';
+}

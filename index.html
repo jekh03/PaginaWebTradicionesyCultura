@@ -21,7 +21,7 @@
   </div>
 
   <div id="content" style="display: none;">
-    <header class="background">
+    <header class="background" id="section_one">
       <nav class="title_nav">
         <p id="titulo_principal">TRADICIONES Y CULTURAS</p>  
       </nav>
@@ -53,35 +53,34 @@
     </header>
     <div class="navegacion_inicio" id="inicio">
       <div class="imagen">
-        <section>
-          <h1 id="titulo_menu">TRADICIONES Y CULTURAS</h1>
-          <img src="zorro_gris.png" alt="Imagen 1" class="base-image imagen_zorro">
-          <img src="zorro_azul.png" alt="Imagen 2" class="overlay-image imagen_zorro">
-        </section>
-
+        <h1 id="titulo_menu">TRADICIONES Y CULTURAS</h1>
+        <img src="zorro_gris.png" alt="Imagen 1" class="base-image imagen_zorro">
+        <img src="iconos/MdiChevronDown.svg" alt="abajo" onclick="scrollToDiv('section_two')" class="iconoFlecha">
       </div>
       
-      <div class="section" id="section_one">
+      <div class="section" id="section_two">
+        <img src="iconos/MdiChevronUp.svg" alt="arriba" onclick="scrollToDiv('section_one')" class="iconoFlecha">
         <h2 id="titulo_cusco">¡BIENVENIDOS A LA ESENCIA DEL CUSCO!</h2>
         <div class="informacion_one">
-          <p id="parrafo1">Descubre las maravillas de una tierra llena de historia, cultura y tradiciones únicas. Entra en un viaje virtual por las festividades, los tesoros arqueológicos, las danzas que cuentan historias ancestrales y mucho más. Únete a nosotros y déjate envolver por la magia del Cusco. ¡Bienvenidos a un mundo de maravillas!</p>
+          <p class="parrafo1">Descubre las maravillas de una tierra llena de historia, cultura y tradiciones únicas. Entra en un viaje virtual por las festividades, los tesoros arqueológicos, las danzas que cuentan historias ancestrales y mucho más. Únete a nosotros y déjate envolver por la magia del Cusco. ¡Bienvenidos a un mundo de maravillas!</p>
+          <p class="parrafo1">Sumérgete en relatos cautivadores, capturados directamente de las voces de quienes viven y aman el Cusco. Desde festivales vibrantes hasta costumbres ancestrales, cada artículo es una ventana a la rica herencia cultural que define esta tierra.</p>
         </div>  
+
+        <div class="contentIcono">
+          <img src="iconos/MdiLightEmail.svg" alt="Imagen Visitar" id="emailIcon" class="iconoInicio">
+          <img src="iconos/UitFacebookF.svg" alt="Imagen Visitar" id="facebookIcon" class="iconoInicio">
+        </div>
         
         <div class="carousel-container">
-         
           <div class="slide22" id="slide1">
             <div class="content">
-              <h2>Sumérgete en relatos cautivadores, capturados directamente de las voces de quienes viven y aman el Cusco. Desde festivales vibrantes hasta costumbres ancestrales, cada artículo es una ventana a la rica herencia cultural que define esta tierra.</h2>
+              <h2 class="tex1">Te invitamos a explorar nuestras secciones y descubrir la belleza que ofrece el Cusco.</h2>
             </div>
           </div>
+          
           <div class="slide22" id="slide2">
             <div class="content">
-              <h2>Te invitamos a explorar nuestras secciones y descubrir la belleza que ofrece el Cusco. ¿Tienes historias para compartir o deseas contribuir a nuestra misión? Estamos abiertos a nuevas voces y perspectivas. ¡Escribenos a nuestro correo!</h2>
-            </div>
-          </div>
-          <div class="slide22" id="slide3">
-            <div class="content">
-              <h2>Los vídeos presentados en esta página son recopilados de diversos canales y usuarios, a quienes se les atribuyen todos los créditos. Se invita cordialmente a explorar dichos canales y perfiles para conocer más acerca de su contenido.</h2>
+              <h2 class="tex1">Los vídeos presentados en esta página son recopilados de diversos canales y usuarios, a quienes se les atribuyen todos los créditos. Se invita cordialmente a explorar dichos canales y perfiles para conocer más acerca de su contenido.</h2>
             </div>
           </div>
           
@@ -118,17 +117,17 @@
 
         <div class="cultura">
           <h1 class="titulo">Cultura</h1>
-          <img src="Portadas/SimpleLineIconsCup.svg" alt="" id="displayedImageCultura">
+          <img src="Portadas/SimpleLineIconsCup.svg" alt="" id="displayedImageCultura" class="imagenInformaciones">
         </div>
 
         <div class="danza" id="nombre" >
           <h1 class="titulo">Danzas</h1>
-          <img src="Portadas/VaadinMovie.svg" alt="" id="displayedImageDanza">
+          <img src="Portadas/VaadinMovie.svg" alt="" id="displayedImageDanza" class="imagenInformaciones">
         </div>
 
         <div class="zona_turistica">
           <h1 class="titulo">zona Turistica</h1>
-          <img src="Portadas/EtBike.svg" alt="" id="displayedImage">
+          <img src="Portadas/EtBike.svg" alt="" id="displayedImage" class="imagenInformaciones">
         </div>
       </div>
 
