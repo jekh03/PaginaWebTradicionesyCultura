@@ -1,11 +1,3 @@
-window.onload = function() {
-  // Oculta el menú de carga
-  document.getElementById("loader").style.display = "none";
-  
-  // Muestra el contenido principal
-  document.getElementById("content").style.display = "block";
-};
-
 
 window.addEventListener('scroll', function() {
   const header = document.querySelector('.imagen');
