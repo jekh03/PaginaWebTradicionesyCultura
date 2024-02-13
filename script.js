@@ -44,7 +44,7 @@ const displayedImageCaltura = document.getElementById("displayedImageCultura");
 imageElements.forEach((imageElement, index) => {
   imageElement.addEventListener('click', () => {
     imageElements.forEach((element) => {
-      element.style.filter = "sepia(1)";
+      element.style.filter = "drop-shadow(-3px 3px 0px black)";
     });
     imageElement.style.filter = "brightness(0.5)";
     const provincia = imageElement.getAttribute('data-provincia');
@@ -58,7 +58,7 @@ imageElements.forEach((imageElement, index) => {
     parrafo.innerHTML = `<span class="color-destacado">Altitud:</span> ${altitud}<br><span class="color-destacado">Capital:</span> ${capital}<br><span class="color-destacado">Distritos:</span> ${distritos}`;
     displayedImage.src = foto;
     displayedImageDanza.src = fotodanza;
-    displayedImageCultura.src = fototradicion;
+    displayedImageCaltura.src = fototradicion;
     info_provincia=imageElement.getAttribute('id');
     localStorage.setItem('imagenSeleccionada', index);
   });
@@ -82,9 +82,50 @@ function mostrarContenido(idContenido) {
   const contenido = document.getElementById(idContenido);
   contenido.style.display = 'block';
 }
+/*--> CARRUSEL DE TEXTOS*/
+var indexProvincia = 0;
+function navegarProvinciasAdelante(){
+  if (indexProvincia==0) {
+    indexProvincia +=1;
+    const text = document.getElementById(indexProvincia.toString());
+    text.style.display='block';
+  
+  }else if(indexProvincia<=11 && indexProvincia >0){
+    const textAnterior = document.getElementById(indexProvincia.toString());
+    textAnterior.style.display='none';
+    indexProvincia +=1;
+    const text = document.getElementById(indexProvincia.toString());
+    text.style.display='block';
+  }else{
+    const textAnterior = document.getElementById(indexProvincia.toString());
+    textAnterior.style.display='none';
+    indexProvincia = 0;
+    indexProvincia +=1;
+    const text = document.getElementById(indexProvincia.toString());
+    text.style.display='block';
+  }
+}
 
+function navegarProvinciasAtras(){
+  if (indexProvincia == 0) {
+    const textAnterior = document.getElementById(indexProvincia.toString());
+    textAnterior.style.display = 'none';
 
-/*carrusel*/ 
+    indexProvincia = 13; 
+    indexProvincia -=1;
+    const text = document.getElementById(indexProvincia.toString());
+    text.style.display = 'block';
+  }else if(indexProvincia > 0){
+    const textAnterior = document.getElementById(indexProvincia.toString());
+    textAnterior.style.display = 'none';
+
+    indexProvincia -=1;
+    const text = document.getElementById(indexProvincia.toString());
+    text.style.display = 'block'
+  }
+}
+
+/*carrusel fotos*/ 
 const buttons = document.querySelectorAll("[data-carousel-button]")
 
 buttons.forEach(button => {

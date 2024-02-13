@@ -56,7 +56,7 @@ a.active {
 }
 
 .tex1{
-  font-size: 100%;
+  font-size: 90%;
   color: black;
 }
 
@@ -101,9 +101,9 @@ a.active {
 }
 
 .main_nav ul, .Info_nav ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .main_nav ul li,.Info_nav ul li{
@@ -112,7 +112,7 @@ a.active {
 }
 
 .main_nav ul li:last-child, .Info_nav ul li:last-child{
-    margin-right: 0;
+  /*margin-right: 0;*/
 }
 
 .main_nav ul li a, .Info_nav ul li a {
@@ -173,10 +173,11 @@ a.active {
 }
 
 #section_two{
-  background-image: url('Portadas/llama1_portada.jpg');
+  /*background-image: url('Portadas/llama1_portada.jpg');*/
   /*background-size: 100%;*/
   background-position: bottom;
   background-size: cover;
+  background-color: whitesmoke;
 }
 
 /*Imagen del Zorro*/
@@ -208,25 +209,21 @@ h1#titulo_menu {
 #titulo_cusco{
   font-family: 'FuenteTitulo2',sans-serif;
   font-size: 50px;
-  color: white;
+  color: #b15a5a;
   /*left: 29px;*/
   position: relative;
   /*top: 30px;*/
-  filter: drop-shadow(8px 11px 1px black);
+  filter: drop-shadow(3px 2px 1px black);
   text-align: center;
 }
 
 .informacion_one {
   position: relative;
-  width: 70%;
+  width: 90%;
   font-size: 20px;
   color: rgb(0, 0, 0);
-  filter: drop-shadow(2px 4px 3px black);
+  filter: drop-shadow(0px 0px 5px black);
   font-family: auto;
-  backdrop-filter: blur(9px);
-  background-color: #ffffff0d;
-  border-radius: 15px;
-  -webkit-backdrop-filter:blur(9px);
 }
 /*.navegacion_inicio*/
 .navegacion_inicio{
@@ -251,7 +248,7 @@ h1#titulo_menu {
 
 /*ajustar el tamaño de la imagen de las imagen de la infor. de cada cada provincia*/
 .imagenInformaciones{
-  filter: drop-shadow(0px 0px 2px white);
+  filter: none /*drop-shadow(0px 0px 2px white);*/
 }
 
 img#displayedImage {
@@ -291,6 +288,7 @@ img#displayedImageCultura {
 
 .iconoFlecha{
   width: 4%;
+  filter: drop-shadow(0px 3px 1px black);
 }
 
 .iconoFlecha:hover{
@@ -307,7 +305,7 @@ img#displayedImageCultura {
   width: 100%; /* Ajustar el ancho de la imagen grande según tus necesidades */
   height: auto; /* Para mantener la proporción original de la imagen grande */
   display: block;
-  filter: drop-shadow(-22px 0px 0px black) blur(1px) sepia(1);
+  filter: drop-shadow(0px 0px 25px white) blur(1px) sepia(0);
 }
 
 .imagenes_provincia {
@@ -327,7 +325,7 @@ img#displayedImageCultura {
   height: auto; /* La altura se ajustará automáticamente para mantener la proporción original */
   transition: transform 0.3s; /* Transición suave para el efecto de zoom */
   z-index: 1;
-  filter:sepia(1);
+  filter: drop-shadow(-3px 3px 0px black);
   cursor: pointer;
 }
 
@@ -428,8 +426,8 @@ img#displayedImageCultura {
 .info_provincia {
   position: absolute;
   top: 12%;
-  left: 9%;
-  width: 17%;
+  /*left: 9%;*/
+  width: 30%;
   border-radius: 13px;
   text-align: center;
 }
@@ -462,11 +460,11 @@ img#displayedImageCultura {
 }
 
 h1.titulo {
-  margin: 2px;
+  /*margin: 2px;*/
   font-size: 22px;
-  text-align: center;
-  color: #00f7d7;
-  filter: drop-shadow(0px 0px 12px);
+  /*text-align: center;*/
+  color: #fdbf00;
+  /*filter: drop-shadow(0px 0px 12px);*/
 }
 
 p.parrafo {
@@ -476,8 +474,8 @@ p.parrafo {
 }
 
 .color-destacado {
-  color: #63c2d9; 
-  filter: drop-shadow(0px 0px 5px);
+  color: white; 
+  filter: drop-shadow(0px 0px 1px blue);
 }
 
 img.imagen_c {
@@ -597,7 +595,6 @@ article{
 .divInformacion{
   display: none;
 }
-
 /*carrusel 2 automatico*/
 .carousel-container {
   width: 90vw;
@@ -646,3 +643,45 @@ article{
     background-position: center;
   }
 }
+
+.contenedor_imagen {
+  float: right;
+  margin-left: 0;
+  max-width: 50%;
+}
+
+.container {
+  width: 100%;
+  padding: 20px;
+  border-bottom: 2px solid #000000;
+  overflow: auto;
+}
+
+.imagenPrueba{
+  max-width: 90%;
+}
+
+.bloque1{
+  background-color: whitesmoke;
+  display: none;
+}
+
+/*titulo de cada imgen (descripcion de la imagen)*/
+.titleImg {
+  font-size: 69%;
+}
+
+.parrafo{
+  max-width: 90%;
+}
+/***nuevo****/
+.texto_provincia{
+  color: white;
+}
+
+.recorrido_mapa{
+  display: flex;
+  justify-content: center;
+}
+
+
